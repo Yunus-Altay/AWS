@@ -1,0 +1,49 @@
+# Installation links
+# General page
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+# Windows
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+# Mac
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html https://graspingtech.com/install-and-configure-aws-cli/
+# Linux
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+# Installation CLI on your "Local"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install unzip  #install "unzip" if not installed
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Remove the CLI version 1
+sudo yum remove awscli -y 
+
+# Alternative way
+pip uninstall awscli
+pip3 uninstall awscli 
+
+# Install AWS CLI version 2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# Install "unzip" if not installed than unzip
+unzip awscliv2.zip 
+sudo ./aws/install
+
+# Update the path accordingly if needed (AWS CLI Version 1 uses>>>> /usr/bin/aws)
+export PATH=$PATH:/usr/local/bin/aws
+
+# Configure your terminal with AWS Access Key ID and Secret Access Key for CLI
+aws configure
+
+# Configuration
+AWS Access Key ID [None]: xxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxx
+Default region name [None]: us-east-1
+Default output format [None]: yaml
+
+# Show the file inside the ./aws folder
+cat .aws/config
+cat .aws/credentials
+
+# Check the existing profiles
+aws configure list-profiles (list of the profiles )
+aws sts get-caller-identity (Who am I)
